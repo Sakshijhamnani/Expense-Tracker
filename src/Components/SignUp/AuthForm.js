@@ -53,7 +53,7 @@ const SignUp = () => {
       .then((data)=>{
         // console.log(data.Response)
         navigate('/')
-        let idToken=data.idToken
+        const idToken=data.idToken
         console.log(idToken)
         localStorage.setItem('token',idToken)
       
