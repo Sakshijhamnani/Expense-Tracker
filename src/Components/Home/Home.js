@@ -11,6 +11,7 @@ const Home = () => {
        <p className={classes.heading}>Welcome to Expense Tracker</p> 
      {profileData?<p className={classes.p}>Your Profile is complete</p> :<p className={classes.p}>Your Profile is incomplete <NavLink to='/contactdetails'>Complete Now</NavLink></p>}
      <p className={classes.p}>Want to edit the profile ? <NavLink to='/contactdetails'>Click</NavLink></p>
+     <NavLink to='/verifyEmail'><button className={classes.button}>Verify Email</button></NavLink>
     </div>
   )
 }

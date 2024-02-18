@@ -22,9 +22,6 @@ export const AuthContextprovider=(props)=>{
 
     const contextvalue={
         token:initialtoken,
-        
-       
-     
         profileData:retrievedData,
         data:updateData
     }
