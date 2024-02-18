@@ -19,11 +19,17 @@ export const AuthContextprovider=(props)=>{
         console.log('Retrieved Data',data)
         console.log('UseState Data',data)
     }
+    const logoutHandler=()=>{
+        localStorage.removeItem('token')
+        localStorage.removeItem('email')
+        localStorage.removeItem('profileData')
+    }
 
     const contextvalue={
         token:initialtoken,
         profileData:retrievedData,
-        data:updateData
+        data:updateData,
+        logout:logoutHandler
     }
 
     
