@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import ContactDetails from './Components/ContactDetails/ContactDetails';
 import { AuthContextprovider } from './Components/AuthContext/auth-context';
+import Profile from './Components/Profile/Profile';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
        <Route path='/' element={<Home/>}/>
        <Route path='/login' element={<AuthForm/>}/>
        <Route path='/contactdetails' element={<ContactDetails/>}/>
+       <Route path='/profile' element={<Profile/>}/>
        </Routes>
    {/* <SignUp/> */}
    </BrowserRouter>

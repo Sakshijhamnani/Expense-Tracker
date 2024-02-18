@@ -54,8 +54,10 @@ const SignUp = () => {
         // console.log(data.Response)
         navigate('/')
         const idToken=data.idToken
+        const email=data.email
         console.log(idToken)
         localStorage.setItem('token',idToken)
+        localStorage.setItem('email',email)
       
       })
       .catch((err)=>{
@@ -106,8 +108,8 @@ const SignUp = () => {
         <input type="email" placeholder='Email' id='email' className={classes.input} ref={emailInputRef} required/><br/>
         <label htmlFor="password" className={classes.label}>Password:</label><br/>
         <input type="password" placeholder='Password' id='password' className={classes.input} ref={passwordInputRef} required/><br/>
-       { <label htmlFor="password" className={classes.label}>Confirm Password:</label>}<br/>
-      {   <input type="password" placeholder='Confirm Password' id='password' className={classes.input} ref={confirmPasswordInputRef} required/>}<br/>
+       { <label htmlFor="confirmpassword" className={classes.label}>Confirm Password:</label>}<br/>
+      {   <input type="password" placeholder='Confirm Password' id='confirmpassword' className={classes.input} ref={confirmPasswordInputRef} required/>}<br/>
         <button className={classes.button}>{logIn ? 'LogIn':'Create New Account'}</button>
         <p className={classes.p} onClick={switchAuthModeHandler}>{logIn?"Create new account":'Login with existing account'}</p>
 

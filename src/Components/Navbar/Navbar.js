@@ -5,8 +5,13 @@ import classes from './Navbar.module.css'
 const Navbar = () => {
   return (
     <div className={classes.nav}>
-        <ul>
+        <ul className={classes.ul}>
             <NavLink to='/'><li className={classes.li}>Home</li></NavLink>
+            <div className={classes.div}>
+            <NavLink to='/login'><li className={classes.li}>Login</li></NavLink>
+            <NavLink to='/profile'><li className={classes.li}>Profile</li></NavLink>
+
+            </div>
         </ul>
     </div>
   )

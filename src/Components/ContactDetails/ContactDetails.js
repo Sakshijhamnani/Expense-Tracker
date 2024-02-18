@@ -9,7 +9,8 @@ const ContactDetails = () => {
     const authcontext=useContext(AuthContext)
     const submitHandler=(event)=>{
         console.log('Token',authcontext.token)
-        event.preventDefault(); 
+        event.preventDefault();
+      
      const enteredFullName=FullNameInputRef.current.value;
      const enteredPhotoUrl=photoUrlInputRef.current.value
 
