@@ -6,6 +6,7 @@ import AuthContext from '../AuthContext/auth-context'
 const Home = () => {
   const authcontext=useContext(AuthContext)
   const profileData=localStorage.getItem('profileData')
+  
   return (
     <div >
        <p className={classes.heading}>Welcome to Expense Tracker</p> 

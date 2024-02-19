@@ -1,0 +1,12 @@
+.div{
+    border: 2px solid black;
+    border-radius: 1rem;
+    width: 27rem;
+    margin: 2.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+.p{
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

@@ -1,12 +1,14 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import classes from './AuthForm.module.css'
 import { useNavigate } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import AuthContext from '../AuthContext/auth-context';
 
 const SignUp = () => {
     const emailInputRef=useRef();
     const passwordInputRef=useRef();
     const confirmPasswordInputRef=useRef()
+    const authcontext=useContext(AuthContext)
 
     const [logIn,setLogIn]=useState(false)
 
@@ -22,6 +24,8 @@ const SignUp = () => {
      const enteredEmail=emailInputRef.current.value;
      const enetredPassword=passwordInputRef.current.value;
      const enteredConfirmPassword=confirmPasswordInputRef.current.value
+
+    
 
      if(logIn){
       fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCyzE7q_jL2tqmuLQQXUYBsDY2OgHdHd0E',
@@ -53,12 +57,14 @@ const SignUp = () => {
       })
       .then((data)=>{
         // console.log(data.Response)
-        navigate('/')
+      
+        navigate('/dailyexpenses')
         const idToken=data.idToken
         const email=data.email
         console.log(idToken)
         localStorage.setItem('token',idToken)
         localStorage.setItem('email',email)
+        authcontext.logInHandler();
       
       })
       .catch((err)=>{

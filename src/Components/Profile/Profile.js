@@ -36,7 +36,7 @@ const Profile = () => {
             }
         })
         .then((data) => {
-            console.log(data.users);
+            console.log('Hhi',data.users);
             localStorage.setItem('profileData', JSON.stringify(data.users));
             authcontext.data(data.users);
         })
