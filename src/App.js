@@ -8,6 +8,7 @@ import ContactDetails from './Components/ContactDetails/ContactDetails';
 import { AuthContextprovider } from './Components/AuthContext/auth-context';
 import Profile from './Components/Profile/Profile';
 import VerifyEmail from './Components/VerifyEmail/VerifyEmail';
+import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
        <Route path='/contactdetails' element={<ContactDetails/>}/>
        <Route path='/profile' element={<Profile/>}/>
        <Route path='/verifyEmail' element={<VerifyEmail/>}/>
+       <Route path='/forgotpassword' element={<ForgotPassword/>}/>
        </Routes>
    {/* <SignUp/> */}
    </BrowserRouter>

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import classes from './AuthForm.module.css'
 import { useNavigate } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 const SignUp = () => {
     const emailInputRef=useRef();
@@ -111,7 +112,9 @@ const SignUp = () => {
        { <label htmlFor="confirmpassword" className={classes.label}>Confirm Password:</label>}<br/>
       {   <input type="password" placeholder='Confirm Password' id='confirmpassword' className={classes.input} ref={confirmPasswordInputRef} required/>}<br/>
         <button className={classes.button}>{logIn ? 'LogIn':'Create New Account'}</button>
+        {logIn && <NavLink to='/forgotpassword'><p>Forgot Password</p></NavLink>}
         <p className={classes.p} onClick={switchAuthModeHandler}>{logIn?"Create new account":'Login with existing account'}</p>
+     
 
     </form>
     </div>
