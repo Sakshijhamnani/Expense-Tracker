@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes from './ShowDailyExpense.module.css'
+import CartContext from '../CartContext/cart-context'
 
 const ShowDailyExpense = (props) => {
+  const cartcontext=useContext(CartContext)
   return (
     <div>
      {
-        props.data.map((expense,index)=>(
-            <div className={classes.div}>
+        cartcontext.item.map((expense,index)=>(
+            <div className={classes.div} key={index}>
                 <p className={classes.p}>{expense.description}</p>
                 <p className={classes.p}>₹{expense.moneySpent}</p>
                 <p className={classes.p}>{expense.category}</p>
