@@ -32,7 +32,7 @@ const CartProvider = (props) => {
         fetchData(); // Fetch data when component mounts
     }, [token]);
 
-    
+
     const addItemHandler=async(item)=>{
       console.log(item)
 
@@ -67,14 +67,72 @@ const CartProvider = (props) => {
       })
       setItems(updatedItems)
     }
-    const removeItemhandler=(id)=>{
+    const removeItemhandler=async(item,index)=>{
+        const email = localStorage.getItem('email');
+        const newEmail = email.replace(/[^\w\s]/gi, "");
+    
+        if (!email) {
+            console.error('Email not found in localStorage');
+            return;
+        }
+    
+        const updatedItems = [...items]; 
+        updatedItems.splice(index, 1); 
+    
+        setItems(updatedItems); 
+    
+       
+        const response = await fetch(`https://react-http-834f8-default-rtdb.firebaseio.com/expenses/${newEmail}.json`, {
+            method: 'PUT',
+            body: JSON.stringify(updatedItems),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    
+        if (!response.ok) {
+            console.error('Failed to delete item from cart at index:', index);
+        } else {
+            console.log('Item removed from cart at index:', index);
+        }
+    }
+    const editItemHander=async(updatedItem,index)=>{
+        const email = localStorage.getItem('email');
+        const newEmail = email.replace(/[^\w\s]/gi, "");
+    
+        if (!email) {
+            console.error('Email not found in localStorage');
+            return;
+        }
+    
+        const updatedItems = [...items]; 
+        updatedItems.splice(index, 1); 
+    
+        setItems(updatedItems); 
+    
+       
+        const response = await fetch(`https://react-http-834f8-default-rtdb.firebaseio.com/expenses/${newEmail}.json`, {
+            method: 'PUT',
+            body: JSON.stringify(updatedItems),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    
+        if (!response.ok) {
+            console.error('Failed to delete item from cart at index:', index);
+        } else {
+            console.log('Item removed from cart at index:', index);
+        }
 
     }
     let cartcontext={
         item:items,
         addItem:addItemHandler,
         removeItem:removeItemhandler,
-        fetchData:fetchData
+        editItem:editItemHander,
+        fetchData:fetchData,
+
     }
   return (
     <CartContext.Provider value={cartcontext}>

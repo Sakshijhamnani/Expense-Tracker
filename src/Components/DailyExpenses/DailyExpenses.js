@@ -53,7 +53,13 @@ const DailyExpenses = () => {
     <button type='submit' className={classes.button} >Add Expense</button>
    
     </form>
-    <ShowDailyExpense data={data}/>
+    <ShowDailyExpense data={data}
+    description={description}
+    setDescription={setDescription}
+    moneySpent={moneySpent}
+    setMoneySpent={setMoneySpent}
+    category={setCategory}
+    setCategory={setCategory}/>
     </div>
   )
 }
