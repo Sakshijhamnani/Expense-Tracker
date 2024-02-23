@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import classes from './Home.module.css'
 import { NavLink } from 'react-router-dom'
-import AuthContext from '../AuthContext/auth-context'
+// import AuthContext from '../AuthContext/auth-context'
 
 const Home = () => {
-  const authcontext=useContext(AuthContext)
+  // const authcontext=useContext(AuthContext)
   const profileData=localStorage.getItem('profileData')
   
   return (

@@ -4,6 +4,14 @@ import classes from './DailyExpenses.module.css'
 import CartContext from '../CartContext/cart-context'
 
 const DailyExpenses = () => {
+  const buttonStyle = {
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '5px',
+    margin:'5px'
+  };
     const [description,setDescription]=useState('')
     const [moneySpent,setMoneySpent]=useState('')
     const [category,setCategory]=useState('')
@@ -37,6 +45,7 @@ const DailyExpenses = () => {
     }
   return (
     <div className={classes.div}>
+     
     <form onSubmit={submitHandler} className={classes.form}>
         <h1 className={classes.heading}>Expenses Tracker</h1>
         <label htmlFor='description' className={classes.label}>Description</label>
@@ -53,6 +62,7 @@ const DailyExpenses = () => {
     <button type='submit' className={classes.button} >Add Expense</button>
    
     </form>
+    <button style={buttonStyle}>Buy Premium</button>
     <ShowDailyExpense data={data}
     description={description}
     setDescription={setDescription}

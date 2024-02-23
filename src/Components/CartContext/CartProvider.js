@@ -29,7 +29,7 @@ const CartProvider = (props) => {
     };
   
     useEffect(() => {
-        fetchData(); // Fetch data when component mounts
+        fetchData(); 
     }, [token]);
 
 

@@ -1,14 +1,16 @@
 import React, { useContext, useRef } from 'react'
-import AuthContext from '../AuthContext/auth-context'
+// import AuthContext from '../AuthContext/auth-context'
 import classes from './ContactDetails.module.css'
+import {useSelector,useDispatch} from 'react-redux'
 
 const ContactDetails = () => {
+    const token=useSelector(state=>state.token)
     const FullNameInputRef=useRef()
     const photoUrlInputRef=useRef()
 
-    const authcontext=useContext(AuthContext)
+    // const authcontext=useContext(AuthContext)
     const submitHandler=(event)=>{
-        console.log('Token',authcontext.token)
+        console.log('Token',token)
         event.preventDefault();
       
      const enteredFullName=FullNameInputRef.current.value;
@@ -17,7 +19,7 @@ const ContactDetails = () => {
      fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCyzE7q_jL2tqmuLQQXUYBsDY2OgHdHd0E', {
       method: 'POST',
       body: JSON.stringify({
-        idToken: authcontext.token,
+        idToken: token,
         displayName: enteredFullName,
         photoUrl:enteredPhotoUrl,
         returnSecureToken: true

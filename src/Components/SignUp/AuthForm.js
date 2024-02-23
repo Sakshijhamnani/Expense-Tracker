@@ -3,11 +3,14 @@ import classes from './AuthForm.module.css'
 import { useNavigate } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import AuthContext from '../AuthContext/auth-context';
+import { useDispatch } from 'react-redux';
+import { logInHandler } from '../Reducers/AuthSlice';
 
 const SignUp = () => {
     const emailInputRef=useRef();
     const passwordInputRef=useRef();
     const confirmPasswordInputRef=useRef()
+    const dispatch=useDispatch
     const authcontext=useContext(AuthContext)
 
     const [logIn,setLogIn]=useState(false)
@@ -64,7 +67,7 @@ const SignUp = () => {
         console.log(idToken)
         localStorage.setItem('token',idToken)
         localStorage.setItem('email',email)
-        authcontext.logInHandler();
+        dispatch(logInHandler());
       
       })
       .catch((err)=>{
