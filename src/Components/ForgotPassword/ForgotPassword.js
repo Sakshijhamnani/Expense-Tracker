@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import classes from './ForgotPassword.module.css'
+import { useSelector } from 'react-redux'
 
 const ForgotPassword = () => {
     const [email,setEmail]=useState('')
     const [loading,setLoading]=useState(false)
+
+    const theme=useSelector(state=>state.thememode.theme)
 
     const emailChangeHandler=(event)=>{
      setEmail(event.target.value)
@@ -45,12 +48,16 @@ const ForgotPassword = () => {
       setLoading(false)
       setEmail('')
     }
+    const divClass=theme?classes.darkdiv:classes.div
+    const formClass=theme?classes.darkform:classes.form
+    const buttonClass=theme?classes.darkbutton:classes.button
+    const labelClass=theme?classes.darklabel:classes.label
   return (
-    <div className={classes.div}>
-    <form onSubmit={SubmitHandler} className={classes.form}>
-        <label htmlFor="email" className={classes.label}>Enter your email</label>
+    <div className={divClass}>
+    <form onSubmit={SubmitHandler} className={formClass}>
+        <label htmlFor="email" className={labelClass}>Enter your email</label>
         <input type="email" id='email' value={email} onChange={emailChangeHandler} className={classes.input}/>
-        <button type='submit' className={classes.button}>Forgot Password</button>
+        <button type='submit' className={buttonClass}>Forgot Password</button>
         {loading && <p>Loading...</p>}
        
     </form>

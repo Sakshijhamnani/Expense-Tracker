@@ -49,3 +49,46 @@
   .premium{
     width: 200px;
   }
+
+  .darkform{
+    border: 2px solid white;
+    width: 20rem;
+    padding: 3rem;
+    border-radius: 2rem;
+
+}
+.darklabel{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    
+  }
+  .darkbutton{
+    width: 16.6rem;
+    background-color: white;
+    border-radius: 0.3rem;
+    padding: 0.6rem;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+.darkbutton:hover{
+    background-color: rgb(160, 161, 161);
+}
+.darkheading{
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    
+    
+}
+.darkdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 85vh; 
+    background-color: black;
+      
+  }

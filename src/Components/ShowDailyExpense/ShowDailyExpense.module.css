@@ -30,3 +30,44 @@
     color: white;
     background-color: rgb(165, 37, 37);
 }
+
+.darkdiv{
+    border: 2px solid white;
+    border-radius: 1rem;
+    width: 27rem;
+    margin: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+
+}
+.darkp{
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+.darkedit{
+    height: 2.8rem;
+    width: 4rem;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: white;
+    color: black;
+
+   
+}
+.darkdelete{
+    height: 2.8rem;
+    width: 4rem; 
+    border: 2px solid white; 
+    border-radius: 0.5rem;
+    color: white;
+    background-color: white;
+    color: black;
+}
+
+
+
+

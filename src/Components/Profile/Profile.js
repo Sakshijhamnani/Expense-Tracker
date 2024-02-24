@@ -5,8 +5,8 @@ import { updateData } from '../Reducers/AuthSlice';
 
 const Profile = () => {
     // const authcontext=useContext(AuthContext)
-    const token=useSelector(state=>state.token)
-    const retrievedData=useSelector(state=>state.retrievedData)
+    const token=useSelector(state=>state.auth.token)
+    const retrievedData=useSelector(state=>state.auth.retrievedData)
     const dispatch=useDispatch()
 
     useEffect(() => {
