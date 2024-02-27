@@ -33,7 +33,7 @@ function App() {
    </BrowserRouter>
    </AuthContextprovider>
    </CartProvider>
-   <a href=''>Hello React</a>
+  
     </div>
   );
 }
