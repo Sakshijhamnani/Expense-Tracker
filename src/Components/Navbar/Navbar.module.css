@@ -1,6 +1,6 @@
 .nav{
     background-color: black;
-    height: 3rem;
+    height: 4rem;
 }
 .li{
     color: aliceblue;
@@ -8,6 +8,7 @@
     text-decoration: none;
     list-style: none;
     margin-right: 30px;
+    padding: 0.5rem;
 
 }
 .ul{
@@ -45,8 +46,8 @@
 }
 
 .darknav{
-    background-color: white;
-    height: 3rem;
+    background-color: rgb(243, 236, 223);
+    height: 4rem;
 }
 .darkli{
     color: black;
@@ -54,10 +55,11 @@
     text-decoration: none;
     list-style: none;
     margin-right: 30px;
+    padding: 0.5rem;
 
 }
 .darkthemebutton{
-    border: 2px solid white;
+    border: 2px solid rgb(243, 236, 223);
     border-radius: 1rem;
     width:5.5rem;
     background-color: black;
@@ -71,5 +73,5 @@
     border-radius: 50%;
     margin: 2px;
     background-color: black;
-    border: 2px solid white;
+    border: 2px solid rgb(243, 236, 223);
 }

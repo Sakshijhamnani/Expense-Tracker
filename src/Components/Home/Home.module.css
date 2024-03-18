@@ -9,10 +9,49 @@
 }
 .button{
     background-color: skyblue;
-    margin-left: 29rem;
+    margin-left: 55.7rem;
     width: 8rem;
     padding: 0.5rem;
     border: 1px solid white;
     color: white;
     border-radius: 1rem;
+}
+
+.div{
+
+}
+
+.darkdiv{
+    margin-top: 0;
+    background-color: rgb(46, 46, 46);
+    height: 47.9rem;
+    padding: 5rem;
+}
+.darkbutton{
+    background-color: white;
+    margin-left: 50.5rem;
+    width: 8rem;
+    padding: 0.5rem;
+    border: 1px solid white;
+    color: black;
+    border-radius: 1rem;
+}
+.darkp{
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+}
+.darkheading{
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+}
+
+
+.div,
+.darkdiv {
+    margin-top: 0;
+    margin-bottom: 0; /* Also reset margin-bottom if necessary */
+    /* Other styles */
 }

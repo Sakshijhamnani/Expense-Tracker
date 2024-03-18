@@ -3,7 +3,8 @@ import CartContext from './cart-context'
 
 const CartProvider = (props) => {
     const [items,setItems]=useState([])
-    const token=localStorage.getItem('token')
+    const token=localStorage.getItem('token');
+    const email = localStorage.getItem('email');
 
     const fetchData = async () => {
         const email = localStorage.getItem('email');
@@ -30,7 +31,7 @@ const CartProvider = (props) => {
   
     useEffect(() => {
         fetchData(); 
-    }, [token]);
+    }, [token,email]);
 
 
     const addItemHandler=async(item)=>{
